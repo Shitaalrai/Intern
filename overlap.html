@@ -11,38 +11,36 @@
         padding:0;
         box-sizing: border-box;
     }
-    body{
-        position: relative;
-        height: 100vh;
-    }
     .photo{
-        width:20rem;
-        height:20rem;
+            width:20rem;
+            height:20rem;
+        }
+    body{
+        height:100vh;
     }
-    .image{
+    .container{
         width:20rem;
         height:20rem;
-        position:absolute;
+        position:relative;
         top:calc(50% - 10rem);
         left:calc(50% - 10rem);
-    
     }
-.text{
+    .text{
     width: 20rem;
     height: 20rem;
     position: absolute;
     background-color: rgb(0,0,0,0.200);
     top:calc(50% - 10rem);
     left:calc(50% - 10rem);
-}
+} 
 
 </style>
 <body>
-    <div class="image">
+    <div class="container">
         <img class="photo" src="image.jpeg">
-    </div>
-    <div class="text">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque labore harum quod tenetur id aperiam dolores, incidunt optio deleniti hic earum libero numquam exercitationem deserunt possimus mollitia consequatur debitis quas.</p>
+        <div class=" text">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At necessitatibus fugiat eaque eos ducimus rerum architecto consequatur cumque sapiente maxime. Tempora beatae magni facere eveniet at dicta perspiciatis fugit inventore.</p>
+        </div>
     </div>
 </body
 </html>
