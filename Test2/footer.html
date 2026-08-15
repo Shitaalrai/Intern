@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        height: 100vh;
+        position: relative;
+    }
+    .container{
+        position: absolute;
+        width: 100%;
+        background-color: rgb(14, 237, 241);
+        bottom: 0;
+        border: 6px solid black;
+        display:flex;
+        justify-content: space-evenly;
+        
+    }
+    .name{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 20rem;
+        height: 20rem;
+        /* background-color: aqua; */
+    }
+    .link{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 20rem;
+        height: 20rem;
+        /* background-color: blueviolet; */
+    }
+    .pages{
+        list-style: none;
+        font-size: 1.2rem;
+    }
+    a{
+        color: black;
+        text-decoration: none;
+        padding: 1rem;
+    }
+    .Message{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 20rem;
+        height: 20rem;
+        /* background-color: brown; */
+    }
+    .mes{
+        border: 2px solid black;
+        width: 10rem;
+        height: 10rem;
+    }
+    .submit{
+        transition: all 0.4s ease-in-out;
+        padding: 0.2rem 0.4rem;
+        border-radius: 0.4rem;
+        border: 2px solid black;
+        &:hover{
+            background-color: rgb(43, 213, 43);
+            font-weight: bold;
+            
+        }
+    }
+</style>
+<body>
+   <div class="container">
+    <div class="name">
+        <h3>My Footer</h3><br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro unde ut fuga voluptate molestias at culpa totam voluptatibus! Culpa ratione doloribus quam voluptatibus expedita quasi pariatur magnam natus accusantium ducimus?</p>
+    </div>
+    <div class="link">
+        <h3>Quick link</h3><br>
+        <ul class="pages">
+            <a href="Itemlist.html">
+                <li>Shopping cart</li>
+            </a>
+             <a href="Overlap.html">
+                <li>Overlap Task</li>
+            </a>
+             <a href="Butterfly.avif">
+                <li>Butterfly Photo</li>
+            </a>
+        </ul>
+    </div>
+    <div class="Message">
+        <h3>Message</h3><br>
+        <input type="text" class="mes" placeholder=" Write your review.">
+        <br>
+        <br>
+        <input type="button" class="submit" value="Submit">
+    </div>
+   </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin:0;
+        box-sizing: border-box;
+    }
+    .container{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        position: relative;
+    }
+    .d1{
+        height: 20rem;
+        width: 20rem;
+    }
+    .Text{
+        height: 20rem;
+        width: 20rem;
+        position: absolute;
+        background-color: rgba(rgba(0, 0, 0, 0.200));
+    }
+    .photo{
+        height: 20rem;
+        width: 20rem;
+        position: absolute;
+    }
+    .register {
+        padding-left: 2rem;
+        height: 20rem;
+        width: 20rem;
+        background-color: bisque;
+    }
+    .submit{
+        transition: all 0.4s ease-in-out;
+        padding: 0.2rem 0.4rem;
+        border-radius: 0.4rem;
+        border: 2px solid black;
+        &:hover{
+            background-color: rgb(43, 213, 43);
+            font-weight: bold;
+            
+        }
+    }
+
+</style>
+<body>
+    <div class="container">
+        <div class="d1">
+            <img class="photo" src="Butterfly.avif" alt="Butterfly">
+        <div class="Text">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos tempore provident ab aspernatur eius, impedit minima veniam maiores, incidunt facilis quam voluptas quis aperiam, autem quia iusto! Beatae, eum minima!</p>
+        </div>
+        </div>
+        <div class="register">
+            <h1>Register</h1><br>
+            <form action="data.php" >
+                <label for="username"> Username:</label>
+                <input type="text"><br><br>
+                <label for="Password"> Password:</label>
+                <input type="password"><br><br>
+                <input type="button" class="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>

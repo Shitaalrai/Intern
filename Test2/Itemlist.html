@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .container{
+        /* position: relative; */
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        justify-content:center;
+    }
+    .photo{
+        /* position: absolute; */
+        height: 20rem;
+        width: 20rem;
+        border: 4px solid black;
+    }
+    .about{
+        background-color: aqua;
+        display: flex;
+        /* position: absolute; */
+        flex-direction: column;
+        height: 20rem;
+        width: 20rem;
+        border: 4px solid black;
+    }
+    .button{
+        background-color: rgb(219, 27, 24);
+        transition: all 0.4s ease-in-out;
+        padding: 0.2rem 0.4rem;
+        border-radius: 0.4rem;
+        border: 2px solid black;
+        &:hover{
+            background-color: rgb(43, 213, 43);
+            font-weight: bold;  
+        }
+    }
+    #item{
+        padding-left: 4rem;
+    }
+    .extra{
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content:space-around ;
+    }
+    .rate{
+        width: 4rem;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="image">
+            <img src="Headphone.jpg" class="photo" alt="Headphone">
+        </div>
+        <div class="about">
+            <h4>Bluetooth Headphones, Premium Active Noise Cancelling Wireless Headphones Over Ear, 50H Playtime, Hi-Res Audio, Deep Bass, Memory Foam Ear Cups for Travel, Home Office </h4>
+            <h4 id="item"><u>About this item:</u></h4>
+            <p>Hi-Res Audio: Hi-Res certification signifies the ability to deliver high-resolution audio, enabling you to enjoy all the thrill and excitement of pure, living sound directly to your ears.</p><br>
+            <h4>Rs.2500</h4><br>
+            <div class="extra">
+                <img src="graph.png" class="rate">
+                <!-- <input type="button" class="button" value="Add to cart"> -->
+                <input type="button" class="button" value="BUY this item">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
