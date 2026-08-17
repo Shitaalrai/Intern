@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    position: relative;
+}
+.navi{
+    position: fixed;
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(226, 233, 98);
+}
+h3{
+    font-size: 2rem;
+}
+.list{
+    list-style: none;
+    font-size: 1.2rem;
+    display: flex;
+    gap: 3rem;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.btn{
+    display: flex;
+    gap: 0.6rem;
+}
+.btn1{
+    transition: all 0.4s ease-in-out;
+    font-size: 1rem;
+    padding: 0.4rem 0.4rem;
+    border: 2px solid black;
+    border-radius: 0.4rem;
+    &:hover{
+         background-color: rgb(232, 178, 178);
+         cursor: pointer;
+    }
+}
+.btn2{
+    transition: all 0.4s ease-in-out;
+    padding: 0.4rem 0.4rem;
+    border: 2px solid black;
+    border-radius: 0.4rem;
+    font-size: 1rem;
+    background-color: red;
+     &:hover{
+        background-color: rgb(232, 178, 178);
+        cursor: pointer;
+    }
+}
+.banner{
+    padding-top: 5rem;
+    background-color: rgb(135, 132, 232);
+}
+.upper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.upper span{
+    margin-top: 1rem;
+    background-color: rgba(2, 248, 248, 0.896);
+}
+.btn3{
+    margin-right: 1rem;
+    transition: all 0.4s ease-in-out;
+    padding: 0.4rem 0.4rem;
+    border: 2px solid black;
+    border-radius: 0.4rem;
+    font-size: 1rem;
+    background-color: red;
+     &:hover{
+        background-color: rgb(232, 178, 178);
+        cursor: pointer;
+    }
+}
+.btn4{
+    transition: all 0.4s ease-in-out;
+    padding: 0.4rem 0.4rem;
+    border: 2px solid black;
+    border-radius: 0.4rem;
+    font-size: 1rem;
+    /* background-color: red; */
+     &:hover{
+        background-color: rgb(232, 178, 178);
+        cursor: pointer;
+    }
+}
+.buttons{
+    display: flex;
+    /* flex-direction: row; */
+    align-items: center;
+    justify-content: center;
+}
+.num {
+    padding-right: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.3rem;
+}
+/* .More{
+    display: flex;
+    justify-content:end;
+    align-items: end;
+} */
+.courses{
+    position: relative;
+    display: flex;
+    /* gap:1rem; */
+    flex-wrap: wrap;
+}
+.c1,.c2,.c3,.c4,.c5,.c6{
+    margin: 1rem;
+    /* padding:1rem; */
+    border:2px solid rgb(255, 254, 254);
+    border-radius: 1rem;
+    width:29rem;
+    height:22rem;
+}
+.pic1{
+    width: 28rem ;
+}
+/* .c1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+.mid span{
+    background-color: rgb(243, 201, 147);
+    border: 1px solid white;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+}
+.end{
+    display: flex;
+    justify-content: space-around;
+}
