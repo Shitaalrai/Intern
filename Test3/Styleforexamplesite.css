@@ -123,6 +123,9 @@ a{
     /* gap:1rem; */
     flex-wrap: wrap;
 }
+.para{
+    padding: 0.3rem 0  0 2rem;
+}
 .c1,.c2,.c3,.c4,.c5,.c6{
     margin: 1rem;
     /* padding:1rem; */
@@ -224,6 +227,7 @@ a{
     }
 }
 .last{
+    padding: 0.3rem 0 3rem 0; 
     background-color: black;
     border-radius: 0 0 2rem 2rem;
     margin-top: 2rem;
