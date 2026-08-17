@@ -68,7 +68,8 @@ a{
     align-items: center;
 }
 .upper span{
-    margin-top: 1rem;
+    margin-top: 2rem;
+    padding: 0.1rem 2rem;
     background-color: rgba(2, 248, 248, 0.896);
     border-radius: 1rem;
 }
@@ -109,6 +110,7 @@ a{
     justify-content: center;
     align-items: center;
     gap: 1.3rem;
+    padding-bottom: 2rem;
 }
 /* .More{
     display: flex;
@@ -149,8 +151,10 @@ a{
 }
 .catagories{
     background-color: rgb(216, 182, 216);
+    border-radius: 1.4rem;
 }
 .txt{
+    padding-left: 2rem;
     display: flex;
     flex-direction: column;
 }
@@ -221,6 +225,7 @@ a{
 }
 .last{
     background-color: black;
+    border-radius: 0 0 2rem 2rem;
     margin-top: 2rem;
     display: flex;
     flex-direction: column;
