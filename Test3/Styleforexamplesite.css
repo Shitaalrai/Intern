@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 body{
     height: 100vh;
@@ -114,7 +115,7 @@ a{
     align-items: end;
 } */
 .courses{
-    position: relative;
+    /* position: relative; */
     display: flex;
     /* gap:1rem; */
     flex-wrap: wrap;
@@ -144,4 +145,79 @@ a{
 .end{
     display: flex;
     justify-content: space-around;
+}
+.catagories{
+    background-color: rgb(216, 182, 216);
+}
+.txt{
+    display: flex;
+    flex-direction: column;
+}
+.maincata{
+ display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.cata1,.cata2,.cata3,.cata4,.cata5,.cata6,.cata7,.cata8{
+    width: 20rem;
+    height: 10rem;
+    margin: 1rem;
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.cata1,.cata3,.cata5,.cata7{
+    background-color: antiquewhite;
+    border-radius: 1rem;
+}
+.cata2,.cata4,.cata6,.cata8{
+    background-color: aquamarine;
+    border-radius: 1rem;
+}
+.aftercata{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.clicks{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.btn6{
+    transition: all 0.4s ease-in-out;
+    padding: 0.4rem 0.4rem;
+    border: 2px solid black;
+    border-radius: 0.4rem;
+    background-color: rgb(250, 0, 0);
+    font-size: 1rem;
+    /* background-color: red; */
+     &:hover{
+        background-color: rgb(52, 237, 24);
+        color: #f9faf9;
+        cursor: pointer;
+}
+}
+.btn7{
+     transition: all 0.4s ease-in-out;
+    padding: 0.4rem 0.4rem;
+    border: 2px solid black;
+    border-radius: 0.4rem;
+    font-size: 1rem;
+    /* background-color: red; */
+     &:hover{
+        background-color: rgb(232, 178, 178);
+        cursor: pointer;
+    }
+}
+.last{
+    background-color: black;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
