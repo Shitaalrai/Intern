@@ -16,7 +16,7 @@ body{
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    background-color: rgb(226, 233, 98);
+    background-color: bisque;
 }
 h3{
     font-size: 2rem;
@@ -60,7 +60,8 @@ a{
 }
 .banner{
     padding-top: 5rem;
-    background-color: rgb(135, 132, 232);
+    /* background-color: rgb(135, 132, 232); */
+    background-image: url(./Image/Cyber.jpg);
 }
 .upper{
     display: flex;
@@ -68,7 +69,7 @@ a{
     align-items: center;
 }
 .upper span{
-    margin-top: 2rem;
+    margin: 2rem 0 2rem 0;
     padding: 0.1rem 2rem;
     background-color: rgba(2, 248, 248, 0.896);
     border-radius: 1rem;
