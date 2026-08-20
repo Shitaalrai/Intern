@@ -127,8 +127,9 @@ a{
 .para{
     padding: 0.3rem 0  0 2rem;
 }
-.c1,.c2,.c3,.c4,.c5,.c6{
+.c1{
     margin: 1rem;
+    box-shadow: 2px 2px 2px grey;
     /* padding:1rem; */
     border:2px solid rgb(255, 254, 254);
     border-radius: 1rem;
@@ -138,11 +139,12 @@ a{
 .pic1{
     width: 28rem ;
 }
-/* .c1{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-} */
+.c1 img{
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
 .mid span{
     background-color: rgb(243, 201, 147);
     border: 1px solid white;
