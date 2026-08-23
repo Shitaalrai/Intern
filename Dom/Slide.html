@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"> 
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .container{
+        height: 100vh;
+    }
+    .Slide{
+        height: 100%;
+        width: 5rem;
+        background-color: fuchsia;
+        display: flex;
+        justify-content: right;
+        transition: all 1s ease-in-out;
+    }
+    .Icons{
+        padding: 0.6rem 0.5rem;
+        font-size: 2.5rem;
+    }
+    #menu{
+        cursor: pointer;
+    }
+    #cross{
+        display: none;
+        cursor: pointer;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="Slide">
+            <div class="Icons">
+               <i id="menu" class="fa-solid fa-bars"></i> 
+               <i id="cross" class="fa-regular fa-circle-xmark"></i> 
+            </div>
+        </div>
+    </div>
+    <script src="slide.js"></script>
+</body>
+</html>

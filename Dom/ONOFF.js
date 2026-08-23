@@ -6,10 +6,10 @@ onbtn.addEventListener("click",()=> {
     console.log(Container)
     offbtn.style.display = "inline";
     onbtn.style.display = "none";
-    Container.style.backgroundColor = "black";
+    Container.style.backgroundColor = "white";
 })
 offbtn.addEventListener("click", () => {
     offbtn.style.display = "none";
     onbtn.style.display = "inline";
-    Container.style.backgroundColor= "white";
+    Container.style.backgroundColor= "black";
 })
