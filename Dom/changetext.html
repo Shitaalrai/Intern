@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .container {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .titles {
+        font-size: 18px;
+        display: flex;
+        gap: 1.5rem;
+        padding-bottom: 1rem;
+        cursor: pointer;
+    }
+    span {
+        padding: 0.5rem;
+        border: 2px solid black;
+        background-color: burlywood;
+    }
+    .texts {
+      border: 2px solid black;
+      width: 20rem;
+      height: 20rem;
+      position: relative;
+      background-color: beige;
+    }
+    .texts p {
+      padding: 2rem;
+      font-size: 18px;
+    }
+    #Htmltext {
+      position: absolute;
+    }
+    #Csstext {
+      position: absolute;
+      display: none;
+    }
+    #Javascripttext {
+      position: absolute;
+      display: none;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="titles">
+        <span class="html">HTML</span>
+        <span class="css">CSS</span>
+        <span class="javascript">JAVASCRIPT</span>
+      </div>
+      <div class="texts">
+        <p id="Htmltext">
+          HTML stands for HyperText Markup Language and serves as the
+          foundational code used to structure web pages and their content. It is
+          not a programming language; instead, it is a markup language that
+          tells your web browser how to display text, images, and links.
+        </p>
+        <p id="Csstext">
+          CSS (Cascading Style Sheets) is a stylesheet language used to format,
+          design, and lay out web pages. While HTML provides the skeleton and
+          structural code of a website, CSS provides the presentation, color,
+          typography, and visual identity. Alongside HTML and JavaScript, it is
+          a core technology of the World Wide Web.
+        </p>
+        <p id="Javascripttext">
+          JavaScript (JS) is a high-level, lightweight, and versatile
+          programming language that acts as the primary core technology for
+          building interactive and dynamic websites. Alongside HTML (which
+          provides structure) and CSS (which handles styling), JavaScript
+          controls the behavior of web elements. It enables features like
+          interactive maps, animated graphics, scrolling feeds, and real-time
+          form validation.
+        </p>
+      </div>
+    </div>
+    <script src="changetext.js"></script>
+  </body>
+</html>
