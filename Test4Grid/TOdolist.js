@@ -4,11 +4,11 @@ const Addbtn = document.querySelector(".btn");
 const Submitbtn = document.querySelector(".btnsubmit");
 
 Addbtn.addEventListener("click", () => {
-    ContainerForm.style.display = "block";
+    ContainerForm.style.display = "flex";
     Containerlist.style.display = "none";
 })
 
 Submitbtn.addEventListener("click", () => {
-    Containerlist.style.display = "block";
+    Containerlist.style.display = "flex";
     ContainerForm.style.display = "none";
 })

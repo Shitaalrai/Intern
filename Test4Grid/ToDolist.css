@@ -68,11 +68,10 @@
     color: brown;
 }
 .lower{
-    padding:2rem;
+    padding: 2rem;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 1rem;
-   
 }
 .box{
     height: 20rem;
@@ -114,12 +113,11 @@
         padding: 1.2rem 1rem;
     }
 
- .containerform{
-        /* height: 100vh; */
-        /* display:flex;
+    .containerform{
+        height: 100vh; 
+        display:flex;
         justify-content: center;
-        align-items: center; */
-        display: none;
+        align-items: center;
     }
     .form{
         background-color: rgb(224, 164, 100);
@@ -134,15 +132,18 @@
     }
     .title{
         border: 2px solid black;
+        font-size: 15px;
         padding: 0.5rem 1rem;
         /* margin: 1rem; */
     }
     .Description{
         border: 2px solid black;
+        font-size: 15px;
         padding: 1.5rem 1.2rem;
         margin: 1rem;
     }
     .Priority{
+        font-size: 15px;
         border: 2px solid black;
         padding: 0.5rem 1.2rem;
     }
