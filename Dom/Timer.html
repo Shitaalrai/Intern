@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .container{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .time{
+        display: flex;
+        gap: 2rem;
+        padding: 2rem;
+        color: orange;
+        font-size: larger;
+    }
+    .buttons{
+        display: flex;
+        gap: 2rem;
+    }
+    .btn{
+        padding: 0.4rem 1.2rem;
+    }
+    .start{
+        background-color: green;
+        border: 2px solid black;
+        cursor: pointer;
+    }
+     .pause{
+        background-color: rgb(253, 87, 4);
+        border: 2px solid black;
+        cursor: pointer;
+    }
+     .reset{
+        background-color: rgb(148, 175, 148);
+        border: 2px solid black;
+        cursor: pointer;
+    }
+
+</style>
+<body>
+    <div class="container">
+        <div class="time">
+            <span class="hour">hrs</span>
+            <span class="minute">Min</span>
+            <span class="second">Sec</span>
+        </div>
+        <div class="buttons">
+            <button class="btn start">Start</button>
+            <button class="btn pause">Pause</button>
+            <button class="btn reset">Reset</button>
+        </div>
+    </div>
+<script src="Timer.js"></script>
+</body>
+</html>
