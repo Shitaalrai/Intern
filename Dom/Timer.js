@@ -9,44 +9,50 @@ const Container = document.querySelector(".container");
 let sec = 0;
 let min = 0;
 let hrs = 0;
-let stopwatch;
+let stopwatch = null;
 
-function Cal(){
-        stopwatch = setInterval(()=>{
-        sec++;
-        Sec.innerHTML =  sec ;
-        if(sec === 60){
-            sec = 0;
-            min++;
-            Min.innerHTML = min;
-        }
-        if (min === 60){
-            min = 0;
-            hrs++;
-            Hrs.innerHTML = hrs;
-        }
-        // console.log("hrs:" +hrs,"min:" +min,"sec:" +sec);
-    },1000);
-};
-
-function stopinterval (){
-    clearInterval(stopwatch);
-    console.log("work");
-    
-};
-
-function Reset(){
+function Cal() {
+  if (stopwatch != null) {
+    return;
+  }
+  stopwatch = setInterval(() => {
+    sec++;
+    if (sec > 59) {
+      sec = 0;
+      min++;
+    }
+    if (min > 59) {
+      min = 0;
+      hrs++;
+    }
+    Sec.innerHTML = sec > 9 ? `${sec}` : `0${sec}`;
+    Min.innerHTML = min > 9 ? `${min}` : `0${min}`;
+    Hrs.innerHTML = hrs > 9 ? `${hrs}` : `0${hrs}`;
+    // console.log("hrs:" +hrs,"min:" +min,"sec:" +sec);
+  }, 1000);
 }
 
-Startbtn.addEventListener("click", ()=>{
-   Cal();
+function stopinterval() {
+  clearInterval(stopwatch);
+  stopwatch = null;
+  console.log("work");
+}
+
+function Reset() {}
+
+Startbtn.addEventListener("click", () => {
+  Cal();
 });
 
-Resetbtn.addEventListener("click",()=>{
-        console.log("worked");
-
+Resetbtn.addEventListener("click", () => {
+  stopinterval();
+  sec = 0;
+  min = 0;
+  hrs = 0;
+  Sec.innerHTML = sec > 9 ? `${sec}` : `0${sec}`;
+  Min.innerHTML = min > 9 ? `${min}` : `0${min}`;
+  Hrs.innerHTML = hrs > 9 ? `${hrs}` : `0${hrs}`;
 });
-Pausebtn.addEventListener("click",()=>{
-    stopinterval();
+Pausebtn.addEventListener("click", () => {
+  stopinterval();
 });
-
