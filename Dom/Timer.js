@@ -25,9 +25,9 @@ function Cal() {
       min = 0;
       hrs++;
     }
-    Sec.innerHTML = sec > 9 ? `${sec}` : `0${sec}`;
-    Min.innerHTML = min > 9 ? `${min}` : `0${min}`;
-    Hrs.innerHTML = hrs > 9 ? `${hrs}` : `0${hrs}`;
+    Sec.innerHTML = sec > 9 ? sec : `0${sec}`;
+    Min.innerHTML = min > 9 ? min : `0${min}`;
+    Hrs.innerHTML = hrs > 9 ? hrs : `0${hrs}`;
     // console.log("hrs:" +hrs,"min:" +min,"sec:" +sec);
   }, 1000);
 }
@@ -49,9 +49,9 @@ Resetbtn.addEventListener("click", () => {
   sec = 0;
   min = 0;
   hrs = 0;
-  Sec.innerHTML = sec > 9 ? `${sec}` : `0${sec}`;
-  Min.innerHTML = min > 9 ? `${min}` : `0${min}`;
-  Hrs.innerHTML = hrs > 9 ? `${hrs}` : `0${hrs}`;
+  Sec.innerHTML = sec > 9 ? sec : `0${sec}`;
+  Min.innerHTML = min > 9 ? min : `0${min}`;
+  Hrs.innerHTML = hrs > 9 ? hrs : `0${hrs}`;
 });
 Pausebtn.addEventListener("click", () => {
   stopinterval();
