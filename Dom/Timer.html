@@ -5,11 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Pirata+One&display=swap" rel="stylesheet">
 <style>
     *{
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        .pirata-one-regular {
+         font-family: "Pirata One", system-ui;
+        font-weight: 400;
+        font-style: normal;
+}
+
     }
     .container{
         height: 100vh;
@@ -19,63 +29,83 @@
         align-items: center;
     }
     .time{
+        border: 3px solid rgb(2, 2, 2);
+        box-shadow: 0.5rem 0.5rem 0.6rem rgb(95, 255, 37);
+        padding: 2rem;
         display: flex;
+        margin-bottom: 2rem;
         gap: 1rem;
         padding: 2rem;
-        color: rgb(255, 10, 238);
-        font-size: 40px;
+        color: rgb(0, 0, 0);
+        font-size: 4rem;
+    }
+    .hour, .second{
+        color: red;
+    }
+    .minute{
+        color: rgb(255, 123, 0);
+    }
+    span{
+        color: darkorchid;
     }
     .buttons{
         display: flex;
-        gap: 2rem;
+        gap: 5rem;
+        border: 3px solid rgb(0, 0, 0);
+        box-shadow: -0.5rem 0.5rem 0.6rem rgb(37, 59, 255);
+        padding: 2rem;
     }
     .btn{
         padding: 0.4rem 1.2rem;
     }
-    .start{
-        background-color: green;
-        border: 2px solid black;
+    .fa-solid.fa-circle-play{
+        /* background-color: green; */
+        font-size: 3rem;
+        /* border: 2px solid black; */
         border-radius: 4px;
         cursor: pointer;
         transition: all 0.6s ease-in-out;
-        &:hover{
+        /* &:hover{
             background-color: rgb(3, 253, 3);
-        }
+        } */
     }
-     .pause{
-        background-color: rgb(253, 87, 4);
+     .fa-solid.fa-pause{
+        /* background-color: rgb(253, 87, 4); */
         border-radius: 4px;
-        border: 2px solid black;
+        font-size: 3rem;
+        /* border: 2px solid black; */
         cursor: pointer;
         transition: all 0.6s ease-in-out;
         display: none;
-         &:hover{
+         /* &:hover{
             background-color: rgb(0, 0, 0);
             color: white;
-        }
+        } */
     }
-    .resume{
+    .fa-solid.fa-play{
+        font-size: 3rem;
         background-color: rgb(1, 1, 1);
         color: white;
         border-radius: 4px;
-        border: 2px solid black;
+        /* border: 2px solid black; */
         cursor: pointer;
         transition: all 0.6s ease-in-out;
         display: none;
-         &:hover{
+         /* &:hover{
             background-color: rgb(245, 88, 4);
-        }
+        } */
     }
-     .reset{
-        background-color: rgb(148, 175, 148);
-        border: 2px solid black;
+     .fa-solid.fa-rotate-left{
+        font-size: 3rem;
+        /* background-color: rgb(148, 175, 148); */
+        /* border: 2px solid black; */
         border-radius: 4px;
         transition: all 0.6s ease-in-out;
         cursor: pointer;
-        &:hover{
+        /* &:hover{
             background-color: rgb(111, 36, 17);
             color: white;
-        }
+        } */
     }
 
 </style>
@@ -87,13 +117,17 @@
             <span class="minute">00</span>
             <span>m:</span>
             <span class="second">00</span>
-            <span>s:</span>
+            <span>s</span>
         </div>
         <div class="buttons">
-            <button class="btn start">Start</button>
-            <button class="btn pause">Pause</button>
-            <button class="btn resume">Resume</button>
-            <button class="btn reset">Reset</button>
+            <i class="fa-solid fa-circle-play"></i>
+            <!-- <button class="btn start">Start</button> -->
+            <i class="fa-solid fa-pause"></i>
+            <!-- <button class="btn pause">Pause</button> -->
+             <i class="fa-solid fa-play"></i>
+            <!-- <button class="btn resume">Resume</button> -->
+             <i class="fa-solid fa-rotate-left"></i>
+            <!-- <button class="btn reset">Reset</button> -->
         </div>
     </div>
 <script src="Timer.js"></script>
