@@ -37,18 +37,45 @@
         border: 2px solid black;
         border-radius: 4px;
         cursor: pointer;
+        transition: all 0.6s ease-in-out;
+        &:hover{
+            background-color: rgb(3, 253, 3);
+        }
     }
      .pause{
         background-color: rgb(253, 87, 4);
         border-radius: 4px;
         border: 2px solid black;
         cursor: pointer;
+        transition: all 0.6s ease-in-out;
+        display: none;
+         &:hover{
+            background-color: rgb(0, 0, 0);
+            color: white;
+        }
+    }
+    .resume{
+        background-color: rgb(1, 1, 1);
+        color: white;
+        border-radius: 4px;
+        border: 2px solid black;
+        cursor: pointer;
+        transition: all 0.6s ease-in-out;
+        display: none;
+         &:hover{
+            background-color: rgb(245, 88, 4);
+        }
     }
      .reset{
         background-color: rgb(148, 175, 148);
         border: 2px solid black;
         border-radius: 4px;
+        transition: all 0.6s ease-in-out;
         cursor: pointer;
+        &:hover{
+            background-color: rgb(111, 36, 17);
+            color: white;
+        }
     }
 
 </style>
@@ -61,11 +88,11 @@
             <span>m:</span>
             <span class="second">00</span>
             <span>s:</span>
-
         </div>
         <div class="buttons">
             <button class="btn start">Start</button>
             <button class="btn pause">Pause</button>
+            <button class="btn resume">Resume</button>
             <button class="btn reset">Reset</button>
         </div>
     </div>
