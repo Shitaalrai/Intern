@@ -6,10 +6,10 @@
 }
 body{
     height: 100vh;
-    /* position: relative; */
+    position: relative;
 }
 .navi{
-    /* position: fixed; */
+    position: fixed;
     width: 100%;
     height: 5rem;
     display: flex;
@@ -250,10 +250,10 @@ a{
 }
     body{
     height: 100vh;
-    /* position: relative; */
+    position: relative;
 }
 .navi{
-    /* position: fixed; */
+    position: fixed;
     width: 100%;
     height: 3rem;
     display: flex;
