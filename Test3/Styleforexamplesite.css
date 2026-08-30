@@ -6,13 +6,10 @@
 }
 body{
     height: 100vh;
-    position: relative;
-}
-.container{
-    width: 100%;
+    /* position: relative; */
 }
 .navi{
-    position: fixed;
+    /* position: fixed; */
     width: 100%;
     height: 5rem;
     display: flex;
@@ -21,7 +18,6 @@ body{
     align-items: center;
     background-color: bisque;
 }
-
 h3{
     font-size: 2rem;
 }
@@ -254,10 +250,10 @@ a{
 }
     body{
     height: 100vh;
-    position: relative;
+    /* position: relative; */
 }
 .navi{
-    position: fixed;
+    /* position: fixed; */
     width: 100%;
     height: 3rem;
     display: flex;
