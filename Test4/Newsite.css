@@ -1,10 +1,15 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Comic+Relief&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 *{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .navBar{
+    box-shadow:2px 2px 5px gray;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -43,12 +48,13 @@ a{
 .menuBarItems{
     display: flex;
     flex-direction: column;
-    gap: 7rem;
+    gap: 5rem;
     align-items: center;
     color: white;
+    padding-left: 1rem ;
 }
 .Menuoptions{
-    padding: 5rem 0 0 0;
+    padding: 6rem 0 0 0;
     display: flex;
     flex-direction: column;
     cursor: pointer;
@@ -90,7 +96,9 @@ a{
     border-style: none;
     background-color: black;
     color: white;
-   padding: 0.5rem 0.5rem ; 
+   padding: 0.5rem 0.5rem; 
+   border-radius: 4px;
+   background-color: rgb(243, 109, 7);
    &:hover{
         background-color: rgb(9, 9, 9);
         color: red;
@@ -98,17 +106,18 @@ a{
 }
 .UpperMainContent{
     /* padding: 5rem; */
-    padding-top: 3rem;
-    padding-left: 15rem;
+    padding-top: 6rem;
+    padding-left: 19rem;
     display: flex;
     gap: 8rem;
 }
 #ImgofDeveloper{
     width: 35rem;
     height: 30rem;
+    border-radius: 8px;
 }
 .progressBar{
-    width: 25rem;
+    width: 23rem;
     height: 15rem;
     border: 2px solid black;
     border-radius: 8px;
@@ -117,6 +126,18 @@ a{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+}
+.BarforProgress{
+    background-color: gray;
+    border-radius: 2px;
+    width:250px;
+    height: 10px;
+}
+.SecondBar{
+    background-color: red;
+    border-radius: 2px;
+    width: 60%;
+    height: 100%;
 }
 .ContinueBtn{
     cursor: pointer;
