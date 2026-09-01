@@ -1,0 +1,222 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.container{
+    height: 200vh;
+}
+.navBar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: blanchedalmond;
+    padding: 1.5rem 1rem;
+}
+li{
+    /* list-style-type: none; */
+    list-style-type:circle;
+    cursor: pointer;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+.navItems{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.Contents{
+    height: 100%;
+    display: flex;
+}
+.menuBar{
+    background-color: rgb(52, 36, 78);
+    width: 12rem;
+    height: 100%;
+    display: flex;
+}
+.menuBarItems{
+    display: flex;
+    flex-direction: column;
+    gap: 7rem;
+    align-items: center;
+    color: white;
+}
+.Menuoptions{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 1rem;
+}
+.mainmenuBtns{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.menuBtns{
+    color: white;
+    font-size: 14px;
+    transition: all 0.5s ease-in-out;
+    background-color: rgb(52, 36, 78);
+    padding: 0.3rem 0.5rem;
+    border-style: none;
+    border-radius: 7px;
+    cursor: pointer;
+    &:hover{
+        background-color: rgb(9, 9, 9);
+        color: red;
+    }
+}
+.AccountOption{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    cursor: pointer;
+}
+.AccountBtns{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.switchbtn{
+    transition: all 0.5s ease-in-out;
+    border-style: none;
+    background-color: black;
+    color: white;
+   padding: 0.5rem 0.5rem ; 
+   &:hover{
+        background-color: rgb(9, 9, 9);
+        color: red;
+    }
+}
+.UpperMainContent{
+    /* padding: 5rem; */
+    padding-top: 3rem;
+    padding-left: 5rem;
+    display: flex;
+    gap: 8rem;
+}
+#ImgofDeveloper{
+    width: 35rem;
+    height: 30rem;
+}
+.progressBar{
+    width: 25rem;
+    height: 15rem;
+    border: 2px solid black;
+    border-radius: 8px;
+    box-shadow: 0.6rem 0.4rem 0.5rem gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.ContinueBtn{
+    cursor: pointer;
+    background-color: rgb(175, 9, 9);
+    color: white;
+    border-style: none;
+    padding: 0.4rem 0.5rem;
+    border-radius: 5px;
+}
+.SideContentofUpper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+}
+.detail{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.LowerMainContent{
+    padding: 2rem 0 0 5rem;
+    display: flex;
+    gap: 2rem;
+}
+.Options{
+    display: flex;
+    gap: 2rem;
+}
+.optionalBtns{
+    border-style: none;
+    background-color: white;
+    font-size: 15px;
+    cursor: pointer;
+    &:hover{
+        font-weight: bold;
+        text-decoration: underline red 3px;
+    }
+}
+.OptionsTxts{
+    border: 2px solid black;
+    width: 32rem;
+    height: 28rem;
+    margin-top: 1rem;
+}
+.Overview{
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    /* display: none; */
+}
+.Curriculum {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    display: none;
+    gap: 2rem;
+}
+.Review{
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    gap: 2rem;
+    display: none;
+}
+.Mentors{
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    gap: 2rem;
+    display: none;
+}
+.CardTitle{
+    font-size: 18px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.CardsItems{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    padding: 1rem 1rem;
+    margin-right: 2rem;
+    gap: 2rem;
+}
+.card{
+    width: 20rem;
+    height: 19rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 0.6rem;
+    border: 2px solid black;
+    border-radius: 8px;
+    box-shadow: 0.8rem 0.5rem 0.5rem black;
+}
+.CardPic{
+    width: 100%;
+    border-radius: 8px;
+    height: 100%;
+}
+.CardEnd{
+    display: flex;
+    justify-content: space-around;
+}

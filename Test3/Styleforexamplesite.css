@@ -4,7 +4,9 @@
     box-sizing: border-box;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
-
+.Container{
+    height: 100vh;
+}
 .navi{
     position: fixed;
     width: 100%;
@@ -61,7 +63,7 @@ a{
     /* background-color: rgb(135, 132, 232); */
     background-image: url(./Image/Cyber.jpg);
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover;
 }
 .upper{
