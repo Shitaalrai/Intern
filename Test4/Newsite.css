@@ -9,8 +9,10 @@
 }
 
 .navBar{
+    width:100%;
     box-shadow:2px 2px 5px gray;
     display: flex;
+    /* gap: 15rem; */
     justify-content: space-around;
     align-items: center;
     background-color: blanchedalmond;
@@ -107,7 +109,7 @@ a{
 .UpperMainContent{
     /* padding: 5rem; */
     padding-top: 6rem;
-    padding-left: 19rem;
+    padding-left: 17rem;
     display: flex;
     gap: 8rem;
 }
@@ -243,4 +245,112 @@ a{
 .CardEnd{
     display: flex;
     justify-content: space-around;
+}
+.logo h3{
+        font-size: 25px;
+    }
+.logo span{
+    color: red;
+    font-size: 30px;
+}
+@media screen and (min-width: 320px) and (max-width: 767px){
+    .logo h3{
+        font-size: 15px;
+    }
+    .logo span{
+        color: red;
+        font-size: 18px;
+    }
+    .navItems a{
+        font-size: 12px;
+    }
+    .menuBar{
+        width:7rem ;
+    }
+    .menuBarItems{
+        gap: 2rem;
+        padding-left: 0.5rem;
+    }
+    .menuBtns{
+        font-size: 11px;
+        padding: 0.2rem 0.3rem;
+        border-radius: 5px;
+    }
+    .switchbtn{
+        font-size: 10px;
+        height: 25px;
+        padding: 0.2rem;
+    }
+    .UpperMainContent{
+        padding-top: 1rem;
+        padding-left: 8rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    #ImgofDeveloper{
+        width: 15rem;
+        height: 15rem;
+    }
+    .SideContentofUpper{
+        padding-bottom: 2rem;
+        gap: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+    .progressBar{
+        width: 15rem;
+        height: 15rem;
+    }
+    .BarforProgress{
+        width: 180px;
+        height: 10px;
+    }
+    .SecondBar{
+        width: 60%;
+        height: 100%;
+    }
+    .LowerMainContent{
+        padding: 0rem 0 0 9rem;
+        display: flex;
+        flex-direction: column;
+    }
+    .Options{
+        display: flex;
+        gap: 1rem;
+    }
+    .optionalBtns{
+        font-size: 13px;
+    }
+    .OptionsTxts{
+        width: 15rem;
+        height: 18rem;
+    }
+    .Overview,.Curriculum,.Mentors,.Review{
+        padding: 1rem;
+        text-align: justify;
+        font-size: 13px;
+    }
+    .CardTitle{
+    font-size: 15px;
+    }
+    .CardsItems{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        /* padding: 1rem 1rem; */
+        /* margin-right: 2rem; */
+        gap: 1.3rem;
+    }
+    .card{
+        width: 15rem;
+        height: 15rem;
+    }
+    .CardPic{
+        width:100% ;
+        height:100%;
+    }
+    .CardMid,.CardEnd{
+        font-size: 13px;
+    }
 }
