@@ -312,20 +312,23 @@ a{
         height: 100%;
     }
     .LowerMainContent{
-        padding: 0rem 0 0 9rem;
+        padding: 0rem 0 0 8rem;
         display: flex;
         flex-direction: column;
     }
     .Options{
         display: flex;
-        gap: 1rem;
+        gap: 0.3rem;
     }
     .optionalBtns{
         font-size: 13px;
     }
     .OptionsTxts{
-        width: 15rem;
-        height: 18rem;
+        width: 14rem;
+        height: 19rem;
+        border: 2px solid black;
+        border-radius: 8px;
+        box-shadow: 0.8rem 0.5rem 0.5rem rgb(81, 80, 80);
     }
     .Overview,.Curriculum,.Mentors,.Review{
         padding: 1rem;
@@ -343,14 +346,16 @@ a{
         gap: 1.3rem;
     }
     .card{
-        width: 15rem;
-        height: 15rem;
+        width: 12.5rem;
+        height: 13rem;
+        
+
     }
     .CardPic{
         width:100% ;
         height:100%;
     }
     .CardMid,.CardEnd{
-        font-size: 13px;
+        font-size: 11px;
     }
 }
