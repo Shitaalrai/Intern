@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+.priority-Low{
+    @apply bg-green-500 ;
+}
+.priority-Medium{
+    @apply bg-yellow-400 ;
+}
+.priority-High{
+    @apply bg-red-600 ;
+}
