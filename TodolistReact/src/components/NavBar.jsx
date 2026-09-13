@@ -3,14 +3,14 @@ import Button from "./Button";
 import { GoSearch } from "react-icons/go";
 import Form from "./Form";
 
-function NavBar() {
+function NavBar({addTodo}) {
   const [value, setvalue] = useState(false);
   const displayForm = () => {
     setvalue((prev) => !prev);
   };
 
   return (
-    <div className=" h-20 flex justify-around items-center">
+    <div className=" h-20 flex justify-around items-center gap-5">
       <div>
         <h3 className="text-4xl font-serif">TODO LIST</h3>
       </div>
@@ -25,7 +25,11 @@ function NavBar() {
         </div>
         <Button text={"ADD"} onClick={displayForm} color={"orange"} fontColor={"Black"} />
       </div>
-      {value && <Form close={displayForm} />}
+      {value && 
+      <Form 
+      close={displayForm} 
+      addTodo={addTodo}
+      />}
     </div>
   );
 }
