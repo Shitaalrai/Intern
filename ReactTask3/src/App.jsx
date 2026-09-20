@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Buttons from "./components/Buttons";
+import Timer from "./components/Timer";
 
 function App() {
   const [count, setcount] = useState(0);
@@ -24,6 +25,12 @@ function App() {
     setInputData("");
   }
 
+  const [color,setColor] = useState("black");
+
+  const colorOfTimer = (e) =>{
+    setColor(e.target.value);    
+  }
+
   return (
     <div className="flex flex-col justify-center items-center gap-4 h-screen">
       <div className="flex gap-6">
@@ -46,6 +53,17 @@ function App() {
           Clear
         </button>
       </div>
+        <div>
+          <select onChange={colorOfTimer}> 
+            <option value={"black"}>Black</option>
+            <option value={"red"}>Red</option>
+            <option value={"Blue"}>Blue</option>
+            <option value={"green"}>Green</option>
+          </select>
+        </div>
+        <div>
+          <Timer color={color}/>
+        </div>
     </div>
   );
 }
