@@ -1,5 +1,6 @@
 import express from "express"
 import user from "./router/user.route.js"
+import db from "./database/db.js";
 
 const app = express();
 const host = 5000;
