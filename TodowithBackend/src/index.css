@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+
+body{
+    @apply bg-gray-600 
+    min-h-screen flex justify-center items-center
+}
+.priority-Low{
+    @apply bg-green-500 ;
+}
+.priority-Medium{
+    @apply bg-yellow-400 ;
+}
+.priority-High{
+    @apply bg-red-600 ;
+}
