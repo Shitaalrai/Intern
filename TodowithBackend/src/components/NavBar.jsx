@@ -1,16 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Button from "./Button";
 import { GoSearch } from "react-icons/go";
-import Form from "./Form";
+import { Link } from "react-router-dom";
+import { AuthContext } from "./Context/Usecontext";
 
 function NavBar() {
-  const [value, setvalue] = useState(false);
-  const displayForm = () => {
-    setvalue((prev) => !prev);
-  };
-
+  const { token,user } = useContext(AuthContext);
   return (
-    <div className=" h-20 flex justify-around items-center gap-5">
+    <div className="bg-amber-100 p-8 border-2 rounded-xl shadow-lg shadow-gray-700 flex justify-around items-center gap-5">
       <div>
         <h3 className="text-4xl font-serif">TODO LIST</h3>
       </div>
@@ -23,12 +20,21 @@ function NavBar() {
             className="text-black p-1 px-3 text-lg w-md rounded-md outline-none "
           />
         </div>
-        <Button text={"ADD"} onClick={displayForm} color={"orange"} fontColor={"Black"} />
+        {token.length > 0 ?<div>
+          <span className="text-lg font-bold border-2 rounded-[70%] h-32 w-32 p-6">
+            {user.name}
+          </span>
+          </div> : (
+          <>
+            <Link to="/login">
+              <Button text={"Login"} color={"green"} fontColor={"black"} />
+            </Link>
+            <Link to="/register">
+              <Button text={"Register"} color={"orange"} fontColor={"black"} />
+            </Link>
+          </>
+        )}
       </div>
-      {value && 
-      <Form 
-      close={displayForm} 
-      />}
     </div>
   );
 }

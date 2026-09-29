@@ -1,15 +1,36 @@
-import React, { use, useEffect, useState } from "react";
-
-import NavBar from "./components/NavBar";
-import Cardsection from "./components/Cardsection";
+import React from "react";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import Homepage from "../pages/Homepage";
+import LoginForm from "../pages/LoginForm";
+import RegisterForm from "../pages/RegisterForm";
+import InvalidPage from "../pages/InvalidPage";
 
 function App() {
+  const route = createBrowserRouter([
+    {
+      path: "/",
+      element: <Homepage />,
+    },
+    {
+      path: "",
+      element: <Homepage />,
+    },
+    {
+      path: "/login",
+      element: <LoginForm />,
+    },
+    {
+      path: "/register",
+      element: <RegisterForm />,
+    },
+    {
+      path: "*",
+      element: <InvalidPage />,
+    },
+  ]);
   return (
-    <div className=" pb-20 flex justify-center items-center p-3 flex-col gap-2">
-      <div className="bg-amber-100 p-5 border-2 rounded-xl shadow-lg shadow-gray-700">
-        <NavBar />
-        <Cardsection  />
-      </div>
+    <div>
+      <RouterProvider router={route} />
     </div>
   );
 }

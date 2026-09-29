@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import axios from "axios";
+import Button from "./Button";
+import Form from "./Form";
+import pic from "../assets/notebook.jpg";
 
 function Cardsection({}) {
   const [data, setdata] = useState([]);
@@ -8,7 +11,6 @@ function Cardsection({}) {
   const FetchApi = async () => {
     try {
       const res = await axios.get("http://localhost:5000/api/get-task");
-      console.log(res.data.data, "hello");
       setdata(res.data.data);
     } catch (e) {
       console.log("e");
@@ -19,8 +21,6 @@ function Cardsection({}) {
     FetchApi();
   }, []);
 
-
-
   const deleteTodo = async (id) => {
     const res = await axios.delete(
       `http://localhost:5000/api/delete-task/${id}`,
@@ -30,29 +30,38 @@ function Cardsection({}) {
     console.log(id);
   };
   const editTodo = async (id) => {
-    const res = await axios.put(
-      `http://localhost:5000/api/delete-task/${id}`
-    )
+    const res = await axios.put(`http://localhost:5000/api/delete-task/${id}`);
+  };
+
+  const [value, setvalue] = useState(false);
+  const displayForm = () => {
+    setvalue((prev) => !prev);
   };
 
   return (
-    <div className="grid grid-cols-3 gap-2">
-      {data.map((items, index) => (
-        <Card
-          item={items}
-          onDelete={() => deleteTodo(items.id)}
-          onEdit={() => editTodo(items.id)}
+    <div className="bg-amber-100 p-8 border-2 rounded-xl shadow-lg shadow-gray-700 ">
+      <div className="flex flex-col justify-center items-center gap-5">
+        <div>
+          <img src={pic} className="h-80 w-80" />
+        </div>
+        <h1 className="text-xl ">No tasks are added !!!</h1>
+        <Button
+          text={"ADD"}
+          onClick={displayForm}
+          color={"orange"}
+          fontColor={"Black"}
         />
-      ))}
-      {/* <Card title={"Study"} about={"Study at least 2 hours."} priority={'Low'}/>
-       <Card title={"Drink Water"} about={"Drink water 3 litre a day"}   priority={'Medium'} />
-       <Card title={"Complete assignment"} about={"Finish the pending college assignment."}  priority={'Low'} />
-       <Card title={"Study JavaScript"} about={'Study and practice Javascript.'}  priority={'Medium'} />
-       <Card title={"Clean the Room"} about={"Clean and Organize your room."}  priority={'High'} />
-       <Card title={"Study"} about={"Study at least 2 hours."}  priority={'Medium'} />
-       <Card title={"Drink Water"} about={"Drink water 3 litre a day"}  priority={'High'} />
-       <Card title={"Complete assignment"} about={"Finish the pending college assignment."}  priority={'Medium'} />
-       <Card title={"Study JavaScript"} about={'Study and practice Javascript.'}  priority={'High'} /> */}
+      </div>
+      <div className="grid grid-cols-3 gap-2">
+        {data.map((items, index) => (
+          <Card
+            item={items}
+            onDelete={() => deleteTodo(items.id)}
+            onEdit={() => editTodo(items.id)}
+          />
+        ))}
+      </div>
+      {value && <Form close={displayForm} />}
     </div>
   );
 }
