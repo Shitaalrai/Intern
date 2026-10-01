@@ -4,6 +4,7 @@ import Homepage from "../pages/Homepage";
 import LoginForm from "../pages/LoginForm";
 import RegisterForm from "../pages/RegisterForm";
 import InvalidPage from "../pages/InvalidPage";
+import Information from "./components/Information";
 
 function App() {
   const route = createBrowserRouter([
@@ -26,6 +27,10 @@ function App() {
     {
       path: "*",
       element: <InvalidPage />,
+    },
+    {
+      path: "/information",
+      element: <Information />,
     },
   ]);
   return (

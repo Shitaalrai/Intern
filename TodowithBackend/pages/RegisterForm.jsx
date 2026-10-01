@@ -1,5 +1,7 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../src/components/Context/Usecontext";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function RegisterForm() {
 
@@ -12,14 +14,24 @@ function RegisterForm() {
   };
 
   const [registerData, setRegisterData] = useState(RegisterInit);
+  const navigate = useNavigate();
+
   const register = async () => {
-    const res = await axios.post("http://localhost:5000/users/post-user", {
-      name: registerData.name,
-      address: registerData.address,
-      phone: registerData.phone,
-      email: registerData.email,
-      password: registerData.password,
-    });
+    try{
+      const res = await axios.post("http://localhost:5000/users/post-user", {
+        name: registerData.name,
+        address: registerData.address,
+        phone: registerData.phone,
+        email: registerData.email,
+        password: registerData.password,
+      });
+      if (res.data.message == "User registred successfully"){
+        alert("user registered");
+        navigate("/");
+      }
+    }catch(e){
+      console.log(e);
+    }
   };
 
   const handleRegisteronchange = (e) => {

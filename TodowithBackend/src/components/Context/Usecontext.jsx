@@ -9,14 +9,20 @@ const AuthContextProvider = ({ children }) => {
     const tokenInit = ""
     const [token,setToken] = useState(tokenInit)
     const [user,setUser] = useState(userInit)
+    const Logout=  () => {
+        setToken(tokenInit);
+        setUser(userInit);
+    };
 
   return (
     <AuthContext.Provider
       value={{
+        userInit,
         setUser,
         setToken,
         token,
-        user
+        user,
+        Logout
       }}
     >
       {children}
