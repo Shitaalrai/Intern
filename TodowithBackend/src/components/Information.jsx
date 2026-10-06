@@ -4,8 +4,7 @@ import { IoLogOutOutline } from "react-icons/io5";
 
 function Information() {
   const { user,Logout } = useContext(AuthContext);
-  console.log(user.name);
-
+  
   return (
   
       <div className=" absolute gap-4 bottom-[17rem] left-[62rem] bg-gray-600 p-10 flex flex-col border-2 shadow-lg shadow-yellow-400 rounded-lg">

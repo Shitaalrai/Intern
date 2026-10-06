@@ -2,13 +2,18 @@ import React, { useEffect, useState } from "react";
 import { FiEdit } from "react-icons/fi";
 import { MdOutlineDelete } from "react-icons/md";
 import axios from "axios";
+import EditForm from "./EditForm";
 
 function Card({
   item,
   onDelete,
   onEdit,
 }) {
-console.log(item,"hi");
+
+const [displayEditForm,setEditForm] = useState(false);
+const toDisplayForm=()=>{
+  setEditForm(!displayEditForm);
+}
 
   return (
     <div className="border-2 rounded-md shadow-md shadow-cyan-800 py-5 px-5 flex flex-col gap-4 bg-gray-300">
@@ -24,9 +29,11 @@ console.log(item,"hi");
           </div>
 
           <div className="flex gap-5 py-6 ">
-            <button className="cursor-pointer" onClick={() => onEdit(item)}>
+           
+            <button className="cursor-pointer" onClick={toDisplayForm}>
               <FiEdit size={20} />
             </button>
+
             <button className="cursor-pointer"
               onClick={() => onDelete(item._id)}
             >
@@ -34,6 +41,7 @@ console.log(item,"hi");
             </button>
           </div>
         </div>
+        {displayEditForm && <EditForm closeForm={toDisplayForm} item={item}/>}
     </div>
   );
 }

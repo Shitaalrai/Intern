@@ -1,30 +1,33 @@
 import React, { useContext, useState } from "react";
-import Button from "./Button";
-import { ImCross } from "react-icons/im";
-import axios from "axios";
 import { AuthContext } from "./Context/Usecontext";
+import { ImCross } from "react-icons/im";
+import Button from "./Button";
+import axios from "axios";
 
-function Form({ close,itemId }) {
+function EditForm({ closeForm, item }) {
   const init = {
-    title: "",
-    description: "",
-    priority: "Low",
+    id: item.id || 0,
+    title: item.title || "",
+    description: item.description || "",
+    priority: item.priority || "Low",
   };
-  const {AuthHeader,setdata} = useContext(AuthContext);
+
   const [formdata, setformdata] = useState(init);
+  const { AuthHeader, setdata } = useContext(AuthContext);
 
   const handleChange = (e) => {
     setformdata((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-    // console.log(e.target.name + ":" + e.target.value);
   };
 
   const handleSubmit = async (e) => {
-    
     e.preventDefault();
-    setformdata(init);
-    const res = await axios.post("http://localhost:5000/api/post-task",formdata,AuthHeader);
+    const res = await axios.put(
+      `http://localhost:5000/api/update-task/${formdata.id}`,
+      formdata,
+      AuthHeader,
+    );
     setdata(res.data.data);
-    close();
+    closeForm();
   };
 
   return (
@@ -35,10 +38,14 @@ function Form({ close,itemId }) {
       >
         <div className="flex justify-center items-center ">
           <div>
-            <h2 className="font-bold text-3xl pl-12 ">Add List</h2>
+            <h2 className="font-bold text-3xl pl-12 ">Edit List</h2>
           </div>
           <div>
-            <button onClick={close} className="cursor-pointer pl-20 pr-0 ">
+            <button
+              onClick={closeForm}
+              type="button"
+              className="cursor-pointer pl-20 pr-0 "
+            >
               <ImCross size={20} />
             </button>
           </div>
@@ -93,4 +100,4 @@ function Form({ close,itemId }) {
   );
 }
 
-export default Form;
+export default EditForm;
