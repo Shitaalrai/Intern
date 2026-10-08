@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "./Context/Usecontext";
 import Information from "./Information";
 import { CgProfile } from "react-icons/cg";
+import { MdEventNote } from "react-icons/md";
+import { FaRegUser, FaUserPlus } from "react-icons/fa";
 
 function NavBar() {
   const { token, user } = useContext(AuthContext);
@@ -13,19 +15,20 @@ function NavBar() {
 
   return (
     <>
-      <div className="bg-amber-100 p-8 border-2 rounded-xl shadow-lg shadow-gray-700 flex justify-evenly items-center gap-8">
-        <div>
-          <h3 className="text-4xl font-serif font-bold">TODO <span className="text-red-600">LIST</span> </h3>
+      <div className="bg-blue-900 p-8 border-2 rounded-xl shadow-lg shadow-gray-700 flex justify-evenly items-center gap-15">
+        <div className="flex items-center justify-center gap-4">
+          <span><MdEventNote size={50} color="white" /></span>
+          <h3 className="text-3xl text-white font-serif font-bold cursor-pointer">TODO <span className="text-blue-400">LIST</span> </h3>
         </div>
-        <div className="flex gap-4">
-          <div className="flex justify-between items-center border-2 rounded-md px-1 h-15 ">
-            <GoSearch size={25} />
+        {/* <div className="flex gap-4"> */}
+          <div className="flex justify-between items-center border-2 border-white shadow-sm shadow-gray-600 rounded-2xl px-2 h-12 bg-white ">
+            <GoSearch size={22} />
             <input
               type="text"
               placeholder="Search Task"
-              className="text-black h-full p-1 px-3 text-lg w-md rounded-md outline-none "
+              className="text-gray-700 h-full p-1 px-3 text-md w-md rounded-md outline-none "
             />
-          </div>
+          {/* </div> */}
           </div>
           {token.length > 0 ? (
             <div className="flex flex-col gap-2 justify-center items-center">
@@ -35,22 +38,24 @@ function NavBar() {
                   setinfodisplay((prev) => !prev);
                 }}
               >
-               <CgProfile size={40}/>
+               <CgProfile size={40} color="white"/>
               </button>
-              <h1 className="text-xl font-bold">{user.name}</h1>
+              <h1 className="text-xl font-bold text-blue-300">{user.name}</h1>
               {infoDisplay && <Information />}
             </div>
           ) : (
             <div className="flex gap-4 items-center">
               <Link to="/login">
-                <Button text={"Login"} color={"green"} fontColor={"black"} />
+              <button className="flex gap-1 items-center py-2 px-6 border border-white rounded-4xl text-white ease-in-out cursor-pointer font-serif hover:bg-blue-400 "> <FaRegUser />Login</button>
+                {/* <Button text={"Login"} color={"green"} fontColor={"black"} /> */}
               </Link>
               <Link to="/register">
-                <Button
+              <button className="flex gap-1 items-center py-2 px-6 border border-white rounded-4xl text-white  font-serif cursor-pointer hover:bg-blue-400 "> <FaUserPlus />Register</button>
+                {/* <Button
                   text={"Register"}
                   color={"orange"}
                   fontColor={"black"}
-                />
+                /> */}
               </Link>
             </div>
           )}

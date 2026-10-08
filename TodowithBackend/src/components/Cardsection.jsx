@@ -5,6 +5,7 @@ import Button from "./Button";
 import Form from "./Form";
 import pic from "../assets/notebook.jpg";
 import { AuthContext } from "./Context/Usecontext";
+import { FaPlus } from "react-icons/fa";
 
 function Cardsection({}) {
   const { user,setUser, tokenInit,setToken, userInit, token, AuthHeader, data, setdata } = useContext(AuthContext);
@@ -27,12 +28,22 @@ function Cardsection({}) {
   }, [token]);
 
   const addMessage = () => {
-    if (user == userInit ){
+    if (token.length == 0 ){
       alert("Please login First.");
     } else {
       displayForm();
     }
   };
+
+  function Loader() {
+  return (
+    <div className="flex items-center justify-center gap-3">
+      <div className="h-6 w-6 animate-spin rounded-full border-4 border-gray-300 border-t-blue-600"></div>
+
+      <span className="text-gray-600">Loading...</span>
+    </div>
+  );
+}
 
   const deleteTodo = async (id) => {
     const res = await axios.delete(
@@ -53,19 +64,19 @@ function Cardsection({}) {
   };
 
   return (
-    <div className="bg-amber-100 p-8 border-2 rounded-xl shadow-lg shadow-gray-700 flex flex-col gap-4 ">
+    <div className="bg-white p-8 border-2 rounded-xl shadow-lg shadow-gray-700 flex flex-col gap-4 ">
       <div className="flex flex-col justify-center items-center gap-2">
         {data.length === 0 &&
-        <div>
-          <div>
-            <img src={pic} className="h-80 w-80" />
+        <div className="flex flex-col gap-4">
+          <div >
+            <img src={pic} className="h-80 w-80 rounded-2xl" />
           </div>
-          <h1 className="text-xl ">No tasks are added !!!</h1>
-          <h1 className="text-xl ">Add your first task and stay organized.</h1>
+          <div className="flex flex-col justify-center items-center">
+          <h1 className="text-2xl font-bold font-serif">No tasks <span className="text-blue-700">are added !!!</span> </h1>
+          <h1 className="text-xl font-serif text-gray-800 ">Add your first task and stay organized.</h1>
+          </div>
         </div>
         }
-        
-        
       </div>
       <div className="grid grid-cols-3 gap-2">
         {data.map((items, index) => (
@@ -78,14 +89,8 @@ function Cardsection({}) {
         ))}
       </div>
       {value && <Form close={displayForm} />}
-      <div className="p-2 flex justify-center items-center">
-        <Button
-          text={"ADD"}
-          // onClick={displayForm}
-          onClick={addMessage}
-          color={"orange"}
-          fontColor={"Black"}
-        />
+      <div className="p-1 flex justify-center items-center">
+            <button className="flex gap-2 items-center py-2 px-6 border bg-blue-700 text-lg cursor-pointer border-white rounded-4xl text-white  font-serif" onClick={addMessage}> <FaPlus size={20} />Add task</button>
       </div>
     </div>
   );

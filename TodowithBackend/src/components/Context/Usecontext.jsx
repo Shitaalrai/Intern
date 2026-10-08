@@ -2,9 +2,7 @@ import axios from "axios";
 import { createContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-
 const AuthContext = createContext();
-
 
 const AuthContextProvider = ({ children }) => {
   const userInit = {};
@@ -20,6 +18,7 @@ const AuthContextProvider = ({ children }) => {
   const Logout = () => {
     setToken(tokenInit);
     setUser(userInit);
+    setdata([]);
   };
 
   return (
@@ -34,7 +33,7 @@ const AuthContextProvider = ({ children }) => {
         Logout,
         AuthHeader,
         data,
-        setdata
+        setdata,
       }}
     >
       {children}

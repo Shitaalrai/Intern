@@ -3,6 +3,12 @@ import { AuthContext } from "../src/components/Context/Usecontext";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
+export const Loader = () => {
+  return (
+    <span className="h-5 w-5 rounded-full border-4 border-gray-400 border-t-red-400 animate-spin"></span>
+  );
+}
+
 function LoginForm() {
   const navigate = useNavigate();
   const LoginInit = {
@@ -11,7 +17,7 @@ function LoginForm() {
   };
 
   const [logindata, setLoginData] = useState(LoginInit);
-
+  const [loading,setloading] = useState(false);
   const {setUser,setToken } = useContext(AuthContext);
   console.log(logindata);
 
@@ -19,6 +25,7 @@ function LoginForm() {
     setLoginData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
   const login = async () => {
+    setloading(true);
     const res = await axios.post("http://localhost:5000/auth/login", {
       email: logindata.email,
       password: logindata.password,
@@ -28,12 +35,13 @@ function LoginForm() {
       setToken(res.data.token)
       navigate("/");
     }
-   
+   setloading(false);
   };
   const handleLogin = (e) => {
     e.preventDefault();
     if (logindata.email.length == 0) {
       alert("please enter email.");
+      return;
     }
     login();
   };
@@ -83,9 +91,11 @@ function LoginForm() {
         </div>
         <button
           type="submit"
-          className=" bg-blue-500 border-2 font-bold shadow-md font-md rounded-md text-sm px-4 py-2.5 hover:bg-green-500 cursor-pointer "
+          className=" bg-blue-50 0 border-2 p-2 font-bold shadow-md  rounded-md px-4 py-2 flex justify-center hover:bg-green-500 cursor-pointer "
         >
-          Submit
+          {
+            loading ? <Loader /> : "LOGIN"
+          }
         </button>
       </form>
     </div>

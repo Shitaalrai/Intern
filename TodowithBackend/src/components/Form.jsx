@@ -3,6 +3,7 @@ import Button from "./Button";
 import { ImCross } from "react-icons/im";
 import axios from "axios";
 import { AuthContext } from "./Context/Usecontext";
+import { Loader } from "../../pages/LoginForm";
 
 function Form({ close,itemId }) {
   const init = {
@@ -12,6 +13,7 @@ function Form({ close,itemId }) {
   };
   const {AuthHeader,setdata} = useContext(AuthContext);
   const [formdata, setformdata] = useState(init);
+  const [loading,setLoading] = useState(false);
 
   const handleChange = (e) => {
     setformdata((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -19,9 +21,9 @@ function Form({ close,itemId }) {
   };
 
   const handleSubmit = async (e) => {
-    
     e.preventDefault();
     setformdata(init);
+    setLoading(true);
     const res = await axios.post("http://localhost:5000/api/post-task",formdata,AuthHeader);
     setdata(res.data.data);
     close();
@@ -77,16 +79,12 @@ function Form({ close,itemId }) {
         <div className="flex gap-10 self-end">
           <Button
             type="submit"
-            text={"Submit"}
+            text={
+              loading ? <Loader/> : "SUBMIT"
+            }
             color={"green"}
             fontColor={"white"}
           />
-          {/* <Button
-            text={"Cancel"}
-            color={"Red"}
-            onClick={close}
-            fontColor={"white"}
-          /> */}
         </div>
       </form>
     </div>

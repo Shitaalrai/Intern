@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../src/components/Context/Usecontext";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { Loader } from "./LoginForm";
 
 function RegisterForm() {
 
@@ -14,10 +15,12 @@ function RegisterForm() {
   };
 
   const [registerData, setRegisterData] = useState(RegisterInit);
+  const [loading,setLoading] = useState(false);
   const navigate = useNavigate();
 
   const register = async () => {
     try{
+      setLoading(true);
       const res = await axios.post("http://localhost:5000/users/post-user", {
         name: registerData.name,
         address: registerData.address,
@@ -26,6 +29,7 @@ function RegisterForm() {
         password: registerData.password,
       });
       if (res.data.message == "User registred successfully"){
+        setLoading(false);
         alert("user registered");
         navigate("/");
       }
@@ -97,9 +101,9 @@ function RegisterForm() {
         </div>
         <button
           type="submit"
-          className=" bg-blue-500 border-2 font-bold shadow-md font-md rounded-md text-sm px-4 py-2.5 cursor-pointer hover:bg-green-500"
+          className=" bg-blue-500 border-2 flex justify-center items-center font-bold shadow-md font-md rounded-md text-sm px-4 py-2.5 cursor-pointer hover:bg-green-500"
         >
-          Register
+          {loading ? <Loader/> : "Register"}
         </button>
       </form>
     </div>
