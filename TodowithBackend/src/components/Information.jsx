@@ -12,7 +12,7 @@ function Information() {
   const { user, Logout } = useContext(AuthContext);
 
   return (
-    <div className=" absolute gap-4 bottom-[7rem] left-[68rem] flex flex-col border-2 border-white shadow-md shadow-gray-700 rounded-xl bg-black/20 backdrop-blur-sm ">
+    <div className=" absolute gap-4 bottom-[-25rem] w-[25rem] flex flex-col border-2 border-white shadow-md shadow-gray-700 rounded-xl bg-black/20 backdrop-blur-sm ">
       <div className="bg-blue-700 w-full h-30 rounded-xl flex gap-3 justify-center items-center p-6">
         <div>
           <CgProfile size={80} color="white" />

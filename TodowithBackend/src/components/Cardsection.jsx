@@ -6,6 +6,7 @@ import Form from "./Form";
 import pic from "../assets/notebook.jpg";
 import { AuthContext } from "./Context/Usecontext";
 import { FaPlus } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 function Cardsection({}) {
   const { user,setUser, tokenInit,setToken, userInit, token, AuthHeader, data, setdata } = useContext(AuthContext);
@@ -29,7 +30,7 @@ function Cardsection({}) {
 
   const addMessage = () => {
     if (token.length == 0 ){
-      alert("Please login First.");
+       toast.error("Please Login first !!");
     } else {
       displayForm();
     }
@@ -51,6 +52,7 @@ function Cardsection({}) {
       AuthHeader,
     );
     setdata(res.data.data);
+    toast.success("Task deleted")
     console.log(res.data, "delete");
     console.log(id);
   };

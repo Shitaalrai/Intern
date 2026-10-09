@@ -7,5 +7,6 @@ import { AuthContextProvider } from "./components/Context/Usecontext.jsx";
 createRoot(document.getElementById("root")).render(
   <AuthContextProvider>
     <App />
+    
   </AuthContextProvider>,
 );

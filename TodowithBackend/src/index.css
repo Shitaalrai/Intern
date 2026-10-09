@@ -3,7 +3,6 @@
 
 body{
     @apply bg-blue-100 
-    min-h-screen flex justify-center items-center
 }
 .priority-Low{
     @apply bg-green-500 ;
