@@ -12,7 +12,7 @@ function Card({ item, onDelete, onEdit }) {
 
   return (
     <div className="border-2 rounded-lg shadow-md shadow-cyan-800 bg-blue-700">
-      <div className="w-[98.7%] bg-white p-5 flex flex-col gap-2 rounded-lg">
+      <div className="w-[98.7%] h-full bg-white p-5 flex flex-col gap-2 rounded-lg">
         <div className="flex justify-between items-start">
           <h4 className="text-xl font-bold">{item.title}</h4>
           <span
@@ -24,8 +24,8 @@ function Card({ item, onDelete, onEdit }) {
         <div key={item._id} className="flex flex-col">
           <div className="flex flex-col gap-2">
             <p className="text-md text-gray-700 font-bold break-words whitespace-normal">
-  {item.description}
-</p>
+              {item.description}
+            </p>
             {/* <span
             className={`text-lg self-start rounded-md p-1 font-bold priority-${item.priority}`}
           >
