@@ -19,6 +19,8 @@ function Cardsection() {
     AuthHeader,
     data,
     setdata,
+    tempData,
+    setTempdata
   } = useContext(AuthContext);
   const FetchApi = async () => {
     console.log(AuthHeader);
@@ -29,6 +31,7 @@ function Cardsection() {
       );
       console.log(res);
       setdata(res.data.data);
+      setTempdata(res.data.data);
     } catch (e) {
       console.log(e);
     }
@@ -62,6 +65,7 @@ function Cardsection() {
       AuthHeader,
     );
     setdata(res.data.data);
+    setTempdata(res.data.data);
     toast.success("Task deleted");
     console.log(res.data, "delete");
     console.log(id);

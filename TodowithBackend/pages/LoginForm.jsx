@@ -21,24 +21,31 @@ function LoginForm() {
   const [logindata, setLoginData] = useState(LoginInit);
   const [loading, setloading] = useState(false);
   const { setUser, setToken } = useContext(AuthContext);
-  console.log(logindata);
 
   const handleLoginOnchange = (e) => {
     setLoginData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
   const login = async () => {
-    setloading(true);
-    const res = await axios.post("http://localhost:5000/auth/login", {
-      email: logindata.email,
-      password: logindata.password,
-    });
-    if (res.data.message === "Login successfully.") {
-      setUser(res.data.user);
-      setToken(res.data.token);
-      navigate("/");
+    try {
+      setloading(true);
+      const res = await axios.post("http://localhost:5000/auth/login", {
+        email: logindata.email,
+        password: logindata.password,
+      });
+      if (res.data.message === "Login successfully.") {
+        setUser(res.data.user);
+        setToken(res.data.token);
+        navigate("/");
+      }
+      setloading(false);
+    } catch (e) {
+      setloading(false);
+      alert(e.response.data.message);
+      
+      console.log(e);
     }
-    setloading(false);
   };
+
   const handleLogin = (e) => {
     e.preventDefault();
     if (logindata.email.length == 0) {
@@ -109,12 +116,12 @@ function LoginForm() {
                   name="password"
                 />
               </div>
-                <button
-                  type="submit"
-                  className=" bg-blue-600 border-2 p-2 font-bold shadow-md  rounded-2xl px-4 py-2 flex justify-center hover:bg-blue-300 cursor-pointer "
-                >
-                  {loading ? <Loader /> : "LOGIN"}
-                </button>
+              <button
+                type="submit"
+                className=" bg-blue-600 border-2 p-2 font-bold shadow-md  rounded-2xl px-4 py-2 flex justify-center hover:bg-blue-300 cursor-pointer "
+              >
+                {loading ? <Loader /> : "LOGIN"}
+              </button>
             </form>
           </div>
         </div>

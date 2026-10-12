@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Button from "./Button";
 import { GoSearch } from "react-icons/go";
 import { Link } from "react-router-dom";
@@ -9,10 +9,23 @@ import { MdEventNote } from "react-icons/md";
 import { FaRegUser, FaUserPlus } from "react-icons/fa";
 
 function NavBar() {
-  const { token, user } = useContext(AuthContext);
+  const { token, user,tempData,setTempData,data,setdata } = useContext(AuthContext);
   const [infoDisplay, setinfodisplay] = useState(false);
   const [logOut, setLogout] = useState();
+  const [search,setSearch] = useState("");
 
+  const handleSearchChange = (e) => {
+    console.log(e.target.value);
+    setSearch(e.target.value.toLowerCase());
+  }
+
+  useEffect(()=>{
+    console.log(search);
+    console.log(tempData);
+    
+    const filterSearch = tempData.filter((data)=>data.title.toLowerCase().includes(search));
+    setdata(filterSearch);
+  },[search])
   return (
     <>
       <div className="bg-blue-900 p-8 border-2 rounded-xl shadow-lg shadow-gray-700 flex justify-evenly items-center gap-15">
@@ -28,6 +41,8 @@ function NavBar() {
         <div className="flex justify-between items-center border-2 border-white shadow-sm shadow-gray-600 rounded-2xl px-2 h-12 bg-white ">
           <GoSearch size={22} />
           <input
+            onChange={handleSearchChange}
+            value={search}
             type="text"
             placeholder="Search Task"
             className="text-gray-700 h-full p-1 px-3 text-md w-md rounded-md outline-none "

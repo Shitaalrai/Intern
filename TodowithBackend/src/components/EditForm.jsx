@@ -17,7 +17,7 @@ function EditForm({ closeForm, item }) {
   };
 
   const [formdata, setformdata] = useState(init);
-  const { AuthHeader, setdata } = useContext(AuthContext);
+  const { AuthHeader, setdata,setTempdata, tempData } = useContext(AuthContext);
   const [loading,setloading] = useState(false);
 
   const handleChange = (e) => {
@@ -33,6 +33,7 @@ function EditForm({ closeForm, item }) {
       AuthHeader,
     );
     setdata(res.data.data);
+    setTempdata(res.data.data);
     closeForm();
   };
 

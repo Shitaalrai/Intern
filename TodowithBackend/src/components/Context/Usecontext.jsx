@@ -10,6 +10,8 @@ const AuthContextProvider = ({ children }) => {
   const [token, setToken] = useState(tokenInit);
   const [data, setdata] = useState([]);
   const [user, setUser] = useState(userInit);
+  const [tempData,setTempdata] = useState([]);
+
   const AuthHeader = {
     headers: {
       Authorization: `Bearer ${token}`,
@@ -34,6 +36,8 @@ const AuthContextProvider = ({ children }) => {
         AuthHeader,
         data,
         setdata,
+        tempData,
+        setTempdata
       }}
     >
       {children}
